@@ -1,0 +1,38 @@
+<div class="container mb-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mt-4 py-2">
+                <h6 class="card-title ms-4">INÍCIO / <span>LOGIN</span></h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col">
+            <div class="d-flex flex-column justify-content-center align-items-center">                
+                <form [formGroup]="loginFormGroup">                    
+                    <div>
+                        <label>E-mail</label>
+                        <input class="form-control ps-2" type="text" formControlName="email"
+                            placeholder="Digite seu e-mail para entrar" (keyup.enter)="onSubmit()">
+                        <small *ngIf="loginFormGroup.controls['email'].invalid && isSubmitted">Digite um email
+                        </small>
+                    </div>
+                </form>
+                
+                <form [formGroup]="loginFormGroup">                    
+                    <div class="mt-2">
+                        <label>Senha</label>
+                        <input class="form-control ps-2" type="password" formControlName="password"
+                            placeholder="Digite sua senha para entrar" (keyup.enter)="onSubmit()">
+                    </div>
+                    <small *ngIf="loginFormGroup.controls['password'].invalid && isSubmitted">Digite uma senha
+                    </small>
+                </form>
+                <small class="mt-2" *ngIf="isSubmitted && authError">{{authMessage}}</small>
+                <button class="btn mt-3 mb-3" (click)="onSubmit()">Entrar</button>
+                <p>Não possui uma conta ainda? <a href="" routerLink="/register">Criar uma conta</a></p>
+            </div>
+        </div>
+    </div>
+</div>

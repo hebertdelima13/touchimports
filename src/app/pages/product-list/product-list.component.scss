@@ -1,0 +1,53 @@
+@import "../../../styles.scss";
+
+.card {
+  border: none;
+  background: $light;
+  border-radius: $border-radius;
+
+  h6 {
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin: auto 0;
+
+    span {
+      color: $primary;
+    }
+  }
+
+  h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  ul {
+    padding-left: 1.5rem;
+
+    li {
+      font-size: 0.8rem;
+      font-weight: 400;
+
+      a,
+      label {
+        color: $primary;
+      }
+    }
+  }
+
+  input[type="number"] {
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: $black;
+    width: 60px;
+    height: 20px;
+    padding-left: 0.6rem;
+    border-radius: $border-radius;
+    border: 1px solid #ccc;
+    outline: none;
+
+    &::placeholder {
+      color: #ccc;
+    }
+  }
+}

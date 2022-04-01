@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card mt-4 py-2">
+                <h6 class="card-title ms-4">INÍCIO / <span>PRODUTOS</span></h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-6 col-md-4 col-lg-2 vw100" *ngIf="!isCategoryPage">
+            <div class="card p-3">
+                <h5 class="card-title">CATEGORIAS</h5>
+                <ul class="mt-2 p-0">
+                    <li class="d-flex flex-column" *ngFor="let category of categories">
+                        <div class="d-flex align-items-center">
+                            <input type="checkbox" name="" id="" (change)="categoryFilter()"
+                                [(ngModel)]="category.checked"><label
+                                class="ms-2 text-uppercase">{{category.name}}</label>
+                        </div>
+                    </li>
+                </ul>
+                <!-- <ul class="mt-2">
+                    <li class="d-flex flex-column" *ngFor="let category of categories">
+                        <a href="">{{category.name}}</a>
+                    </li>
+                </ul> -->
+            </div>
+
+            <div class="card mt-3 p-3">
+                <h5 class="card-title">MARCAS</h5>
+                <ul class="p-0">
+                    <li class="d-flex flex-column mt-2">
+                        <div class="d-flex align-items-center">
+                            <input type="checkbox" name="" id=""><label class="ms-2">REDMI</label>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <input type="checkbox" name="" id=""><label class="ms-2">SAMSUNG</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card mt-3 p-3">
+                <h5 class="card-title">PREÇO</h5>
+                <div class="mt-2">
+                    <input type="number" name="" id="" placeholder="DE">
+                    <input class="ms-1" type="number" name="" id="" placeholder="ATÉ">
+                </div>
+            </div>
+
+            <div class="card p-3 mb-4 mt-3">
+                <h5 class="card-title">COR</h5>
+                <ul class="p-0">
+                    <li class="d-flex flex-column mt-2">
+                        <div class="d-flex align-items-center">
+                            <input type="checkbox" name="" id=""><label class="ms-2">AMARELO</label>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <input type="checkbox" name="" id=""><label class="ms-2">AZUL</label>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <input type="checkbox" name="" id=""><label class="ms-2">PRETO</label>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <input type="checkbox" name="" id=""><label class="ms-2">BRANCO</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-6 col-md-8 col-lg-10 mb-5">
+            <div class="row mx-0 d-flex">
+                <div class="col-lg-3 col-md-4 col-xs-12" *ngFor="let product of products">
+                    <app-product-item [product]="product"></app-product-item>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

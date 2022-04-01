@@ -1,0 +1,43 @@
+<div class="container mb-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mt-4 py-2">
+                <h6 class="card-title ms-4">INÍCIO / <span>CARRINHO DE COMPRA</span></h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-xs-12 col-md-9">
+            <table class="table text-center text-uppercase align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col">IMAGEM</th>
+                        <th scope="col">PRODUTO</th>
+                        <th scope="col">PREÇO</th>
+                        <th scope="col">QUANTIDADE</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cartItem of cartItemsDetailed">
+                        <td><img [src]="cartItem.product.image"></td>
+                        <td>{{cartItem.product.name}}</td>
+                        <td>{{cartItem.product.price | currency}}</td>
+                        <td>
+                            <p-inputNumber incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" buttonLayout="horizontal" [showButtons]="true" [inputId]="cartItem.product.id" [min]="1"
+                            [max]="100" [(ngModel)]="cartItem.quantity"
+                            (onInput)="updateCartItemQuantity($event, cartItem)">
+                        </p-inputNumber>                            
+                        </td>
+                        <td><button (click)="deleteCartItem(cartItem)">X</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-xs-12 col-md-3 d-flex flex-column">
+            <app-order-summary></app-order-summary>
+        </div>
+    </div>
+</div>

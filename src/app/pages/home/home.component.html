@@ -1,0 +1,145 @@
+<section class="slider-main mt-4 mt-md-5">
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex align-items-center">
+                <swiper #swiper [config]="config">
+                    <ng-template swiperSlide>
+                        <img src="./assets/product14.jpg" alt="">
+                    </ng-template>
+                    <ng-template swiperSlide>
+                        <img src="./assets/product12.jpg" alt="">
+                    </ng-template>
+                    <ng-template swiperSlide>
+                        <img src="./assets/product13.jpg" alt="">
+                    </ng-template>
+                    <ng-template swiperSlide>
+                        <img src="./assets/product11.jpg" alt="">
+                    </ng-template>
+                    <ng-template swiperSlide>
+                        <img src="./assets/smartwatchiwohw18.jpg" alt="">
+                    </ng-template>
+                </swiper>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="featured-products mt-5">
+    <div class="container">
+        <div class="row section-title d-flex align-items-center">
+            <div class="col-8 col-md-4 col-lg-3">
+                <h2 class="m-0">PRODUTOS EM DESTAQUE</h2>
+            </div>
+            <div class="col-4 col-md-8 col-lg-9">
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+
+        <div class="row mt-5 mx-0 d-flex">
+            <div class="col-lg-3 col-md-4 col-xs-12 mb-5" *ngFor="let product of products">
+                <app-product-item-featured [product]="product"></app-product-item-featured>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slider-promo mt-5">
+    <div class="container">
+        <div class="row section-title d-flex align-items-center">
+            <div class="col-5 col-md-4 col-lg-3">
+                <h2 class="m-0">PROMOÇÕES</h2>
+            </div>
+            <div class="col-7 col-md-8 col-lg-9">
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col p-0 d-flex align-items-center mt-4">
+            <swiper #swiperPromo [config]="configPromo">
+                <ng-template swiperSlide>
+                    <a href=""><img src="./assets/redmiairdots2.jpg" alt=""></a>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <a href=""><img src="./assets/redmiairdots2.jpg" alt=""></a>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <a href=""><img src="./assets/redmiairdots2.jpg" alt=""></a>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <a href=""><img src="./assets/redmiairdots2.jpg" alt=""></a>
+                </ng-template>
+            </swiper>
+        </div>
+    </div>
+</section>
+
+<section class="new-products mt-5">
+    <div class="container">
+        <div class="row section-title d-flex align-items-center">
+            <div class="col-6 col-md-4 col-lg-3">
+                <h2 class="m-0">NOVOS PRODUTOS</h2>
+            </div>
+            <div class="col-6 col-md-8 col-lg-9">
+                <div class="section-title-line"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-12 col-md-7 new-products-img-main">
+                <a href=""><img src="./assets/product8.jpg" alt=""></a>
+            </div>
+            <div class="col-12 col-md-5 d-flex flex-column justify-content-between mt-3 mt-md-0">
+                <div class="row new-products-img-secondary">
+                    <div class="col">
+                        <a href=""><img src="./assets/product9.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="row new-products-img-secondary">
+                    <div class="col mt-3 mt-md-0">
+                        <a href=""><img src="./assets/product10.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="info-shop mt-5 mb-5">
+    <div class="container">
+        <div class="info-shop-card">
+            <div class="row">
+                <div class="col-md-12 col-lg-4 info-shop-card-desc d-flex align-items-center justify-content-center">
+                    <div>
+                        <i class="bi bi-hand-thumbs-up me-2"></i>
+                    </div>
+                    <div>
+                        <h3>QUALIDADE GARANTIDA</h3>
+                        <span>QUALIDADE VERIFICADA POR NOSSA EQUIPE</span>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-4 info-shop-card-desc d-flex align-items-center justify-content-center">
+                    <div>
+                        <i class="bi bi-cash me-2"></i>
+                    </div>
+                    <div>
+                        <h3>PREÇO</h3>
+                        <span>O MELHOR PREÇO DA GRANDE VITÓRIA</span>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-4 info-shop-card-desc d-flex align-items-center justify-content-center">
+                    <div>
+                        <i class="bi bi-stopwatch me-2"></i>
+                    </div>
+                    <div>
+                        <h3>HORÁRIOS</h3>
+                        <span>SEG. a SEX. 09H ÀS 18H / SÁBADO 09H ÀS 15H</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,20 @@
+<table class="table text-uppercase">
+    <tbody>
+        <tr>
+            <td scope="col">SUBTOTAL</td>
+            <td class="text-end">{{ totalPrice | currency: 'BRL' }}</td>
+        </tr>
+        <tr>
+            <td scope="col">CUSTO DO FRETE</td>
+            <td class="text-end">R$ 0.00</td>
+        </tr>
+        <tr>
+            <td scope="col">TOTAL</td>
+            <td class="text-end">{{ totalPrice | currency: 'BRL' }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="!isCheckout">
+<button type="button" class="px-3" (click)="navigateToCheckout()">CONTINUAR</button>
+</div>

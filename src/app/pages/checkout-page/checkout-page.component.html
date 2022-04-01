@@ -1,0 +1,93 @@
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mt-4 py-2">
+                <h6 class="card-title ms-4">INÍCIO / <span>FINALIZAR COMPRA</span></h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-xs-12 col-md-9">
+            <div class="row">
+
+                <div class="col-4">
+                    <form [formGroup]="checkoutFormgroup">
+                        <label>Nome</label>
+                        <input formControlName="name" type="text" name="" id="name"
+                            placeholder="Digite um nome para o usuário">
+                        <small *ngIf="checkoutFormgroup.controls['name'].invalid && isSubmitted">Digite um nome</small>
+                    </form>
+                </div>
+                <div class="col-4">
+                    <form [formGroup]="checkoutFormgroup">
+                        <label>E-mail</label>
+                        <input formControlName="email" type="text" name="" id="email"
+                            placeholder="Digite um e-mail para o usuário">
+                        <small *ngIf="checkoutFormgroup.controls['email'].invalid && isSubmitted">
+                            <span *ngIf="checkoutFormgroup.controls['email'].errors?.['required']">Digite um
+                                e-mail</span>
+                            <span *ngIf="checkoutFormgroup.controls['email'].errors?.['email']">Digite um e-mail
+                                válido</span>
+                        </small>
+                    </form>
+                </div>
+                <div class="col-4">
+                    <form [formGroup]="checkoutFormgroup">
+                        <label>Telefone</label>
+                        <input formControlName="phone" type="text" name="" id="phone" mask="(00) 00000-0000"
+                            [showMaskTyped]="true">
+                        <small *ngIf="checkoutFormgroup.controls['phone'].invalid && isSubmitted">Digite um
+                            telefone</small>
+                    </form>
+                </div>
+                <div class="col-4 mt-2">
+                    <form [formGroup]="checkoutFormgroup">
+                        <label>Rua</label>
+                        <input formControlName="street" type="text" name="" id="street"
+                            placeholder="Digite uma rua para o usário">
+                        <small *ngIf="checkoutFormgroup.controls['street'].invalid && isSubmitted">Digite uma
+                            rua</small>
+                    </form>
+                </div>
+                <div class="col-4 mt-2">
+                    <form [formGroup]="checkoutFormgroup">
+                        <label>Bairro</label>
+                        <input formControlName="apartment" type="text" name="" id="apartment"
+                            placeholder="Digite um bairro para o usário">
+                        <small *ngIf="checkoutFormgroup.controls['apartment'].invalid && isSubmitted">Digite um
+                            bairro</small>
+                    </form>
+                </div>
+                <div class="col-4 mt-2">
+                    <form [formGroup]="checkoutFormgroup">
+                        <label>Cep</label>
+                        <input formControlName="zip" type="text" name="" id="zip" mask="00000-000"
+                            [showMaskTyped]="true">
+                        <small *ngIf="checkoutFormgroup.controls['zip'].invalid && isSubmitted">Digite um cep</small>
+                    </form>
+                </div>
+                <div class="col-4 mt-2">
+                    <form [formGroup]="checkoutFormgroup">
+                        <label>Cidade</label>
+                        <input formControlName="city" type="text" name="" id="city"
+                            placeholder="Digite uma cidade para o usário">
+                        <small *ngIf="checkoutFormgroup.controls['city'].invalid && isSubmitted">Digite uma
+                            cidade</small>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-3">
+            <app-order-summary></app-order-summary>
+            <div class="col-12">
+                <button type="button" class="px-3" (click)="placeOrder()">FINALIZAR COMPRA</button>
+            </div>
+
+            <div class="col-12">
+                <button type="button" class="px-3 my-2" (click)="backToCart()">VOLTAR AO CARRINHO</button>
+            </div>
+        </div>
+    </div>
+</div>

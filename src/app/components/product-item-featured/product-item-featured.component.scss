@@ -1,0 +1,48 @@
+@import "../../../styles.scss";
+
+.card {
+    width: 100%;
+    height: 100%;
+    background: $light;
+    box-shadow: 0px 50px 73px -60px rgba(0, 0, 0, 0.25);
+    border-radius: $border-radius;
+    border: 1px solid $light;
+    overflow: hidden;
+    opacity: 0.9;
+
+    button {
+      position: absolute;
+      top: 65%;
+      display: none;
+      z-index: 9999;
+      width: 30px;
+      height: 30px;
+      background: $primary;
+
+      i {
+        color: $white;
+      }
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    span {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: $primary;
+    }
+
+    &:hover {
+      transform: scale(102%);
+      opacity: 1;
+      transition: transform 0.5s;
+
+      button {
+        display: flex;
+      }
+    }
+  }

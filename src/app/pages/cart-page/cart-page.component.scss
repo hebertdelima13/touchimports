@@ -1,0 +1,66 @@
+@import "../../../styles.scss";
+
+.card {
+  border: none;
+  background: $light;
+  border-radius: $border-radius;
+
+  h6 {
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin: auto 0;
+
+    span {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: $primary;
+    }
+  }
+}
+
+.table {
+  font-size: 0.8rem;
+  border: 1px solid $light;
+
+  img {
+    width: 70px;
+  }
+
+  thead {
+    background: $primary;
+    border: 0;
+
+    th {
+      font-weight: 500;
+      color: $white !important;
+    }
+  }
+
+  button {
+    font-weight: 500;
+    font-size: 0.7rem;
+    height: 30px;
+    width: 30px;
+    background: $primary;
+    border-radius: $border-radius;
+    color: $white;
+
+    &:hover {
+      background: $black;
+    }
+  }
+}
+
+button {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: $white;
+  height: 2rem;
+  background: $primary;
+  border: none;
+  border-radius: $border-radius;
+
+  &:hover {
+    background: $black;
+  }
+}

@@ -1,0 +1,51 @@
+<div class="container mb-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mt-4 py-2">
+                <h6 class="card-title ms-4">INÍCIO / <span>REGISTRAR</span></h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col d-flex flex-column justify-content-center align-items-center">
+
+            <form [formGroup]="form">
+                <div class="d-flex flex-column">
+                    <label>Nome</label>
+                    <input formControlName="name" type="text" name="" id="name"
+                        placeholder="Digite um nome para o usuário">
+                    <small *ngIf="form.controls['name'].invalid && isSubmitted">Digite um nome para o
+                        usuário</small>
+                </div>
+            </form>
+
+            <form [formGroup]="form">
+                <div class="d-flex flex-column mt-2">
+                    <label>E-mail</label>
+                    <input formControlName="email" type="text" name="" id="email"
+                        placeholder="Digite um e-mail para o usuário">
+                    <small *ngIf="form.controls['email'].invalid && isSubmitted">
+                        <span *ngIf="form.controls['email'].errors?.['required']">Digite um e-mail para o
+                            usuário</span>
+                        <span *ngIf="form.controls['email'].errors?.['email']">Digite um e-mail válido</span>
+                    </small>
+                </div>
+            </form>
+
+
+            <form [formGroup]="form">
+                <div class="d-flex flex-column mt-2">
+                    <label>Senha</label>
+                    <input formControlName="password" type="password" name="" id="password"
+                        placeholder="Digite uma senha para o usário">
+                    <small *ngIf="form.controls['password'].invalid && isSubmitted">Digite uma senha para o
+                        usário</small>
+                </div>
+            </form>
+
+            <button class="btn mt-3 mb-3" (click)="onSubmit()">Registrar</button>
+            <p>Já possui uma conta ? <a href="" routerLink="/login">Fazer login</a></p>
+        </div>
+    </div>
+</div>

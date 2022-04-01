@@ -1,0 +1,194 @@
+@import "../../../styles.scss";
+
+.logo {
+  width: 6.25rem;
+}
+
+.search {
+  input {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: $black;
+    width: 24.56rem;
+    height: 2.5rem;
+    padding-left: 0.6rem;
+    border-radius: $border-radius;
+    border: 1px solid #ccc;
+    outline: none;
+
+    &::placeholder {
+      color: #ccc;
+    }
+  }
+
+  button {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: $white;
+    width: 6.25rem;
+    height: 2.5rem;
+    background: $primary;
+    border: none;
+    border-radius: $border-radius;
+
+    &:hover {
+      background: $black;
+    }
+  }
+}
+
+.header-info {
+  i {
+    width: 40px;
+    height: 40px;
+    border: 1px solid $primary;
+    color: $primary;
+  }
+
+  a {
+    h6 {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: $black;
+    }
+
+    span {
+      color: $primary;
+      font-weight: 400;
+      font-size: 0.7rem;
+    }
+  }
+}
+
+nav {
+  background: $black;
+  color: $white;
+  font-size: 0.8rem;
+
+  button {
+    color: $white;
+    font-weight: 400;
+    background: none;
+    border: none;
+
+    &:hover {
+      color: $primary;
+
+      i {
+        color: $primary;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    background: $black;
+    text-transform: uppercase;
+    border: none;
+    font-size: 0.8rem;
+    inset: 5px auto auto 0 !important;
+    border-radius: 0 0 $border-radius $border-radius;
+
+    a:hover {
+      color: #fff;
+      background: $primary;
+    }
+  }
+
+  i {
+    font-size: 1.6rem;
+    color: $white;
+  }
+
+  a {
+    color: $white;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .active {
+    color: $primary;
+  }
+}
+
+.dropdown-cel {
+  i {
+    font-size: 2rem;
+    color: $black!important;
+
+    &:hover {
+      color: $primary!important;
+    }
+  }
+
+  .btn:focus {
+    box-shadow: none;
+  }
+
+  .dropdown-menu {
+    background: $black;
+    font-size: 0.8rem;
+    border-radius: 0;
+    margin-top: 2rem !important;
+
+    a {
+      color: $white;
+
+      &:hover {
+        color: $white;
+        background: $primary;
+      }
+    }
+
+    input {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: $black;
+      height: 2rem;
+      padding-left: 0.6rem;
+      border-radius: $border-radius;
+      border: 1px solid #ccc;
+      outline: none;
+
+      &::placeholder {
+        color: #ccc;
+      }
+    }
+  }
+}
+
+// #btn-mobile {
+//   display: flex;
+//   background: none;
+//   border: none;
+// }
+
+// #hamburguer::after, #hamburguer::before {
+//   content: '';
+//   display: block;
+//   width: 20px;
+//   height: 2px;
+//   background: currentColor;
+//   margin-top: 5px;
+//   transition: 0.3s;
+//   position: relative;
+// }
+
+// #hamburguer::after {
+//   width: 10px;
+// }
+
+// #hamburguer.active {
+//   border-top: transparent;
+// }
+
+// #hamburguer.active::before {
+//   transform: rotate(135deg);
+// }
+
+// #hamburguer.active::after {
+//   transform: rotate(-135deg);
+//   top: -7px;
+//   width: 20px;
+// }

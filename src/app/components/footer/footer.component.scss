@@ -1,0 +1,78 @@
+@import "../../../styles.scss";
+
+.footer {
+  background: $black;
+  height: 100%;
+
+  .footer-logo {
+    img {
+      width: 100px;
+    }
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $primary;
+    margin: 0;
+  }
+
+  span {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: $white;
+  }
+
+  .contacts {
+    a {
+      i {
+        font-size: 0.9rem;
+        color: $primary;
+
+        &:hover {
+          position: relative;
+          bottom: 0.1rem;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .payment-methods {
+    img {
+      width: 50px;
+    }
+  }
+
+  .category {
+    ul {
+      padding: 0;
+
+      a {
+        font-size: 0.7rem;
+        font-weight: 400;
+        color: $white;
+        margin-bottom: 0.4rem;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+.copyright {
+  background: $primary;
+  height: 100%;
+  font-size: 0.6rem;
+  font-weight: 400;
+
+  span {
+    color: $white;
+  }
+
+  img {
+    width: 15px;
+  }
+}

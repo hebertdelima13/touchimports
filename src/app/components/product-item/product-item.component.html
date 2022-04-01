@@ -1,0 +1,10 @@
+<div class="card d-flex align-items-center text-center">
+    <button class="btn align-items-center justify-content-center" (click)="addProductToCart()"><i class="bi bi-cart"></i></button>
+    <div class="featured-products-img">
+        <a href="" [routerLink]="'/produtos/' + product.id"><img class="img-fluid" [src]="product.image" alt=""></a>
+    </div>
+    <div class="mt-2 mb-1 d-flex flex-column">
+        <h3>{{product.name}}</h3>
+        <span>{{product.price | currency}}</span>
+    </div>
+</div>

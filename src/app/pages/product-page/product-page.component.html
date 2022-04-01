@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card mt-4 py-2">
+                <h6 class="card-title ms-4 text-uppercase">INÍCIO / {{product.category?.name}} /
+                    <span>{{product.name}}</span>
+                </h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-4">
+            <app-product-gallery [images]="product.images"></app-product-gallery>
+        </div>
+
+        <div class="col-8 product-info">
+            <div class="row">
+                <div class="col-12 mb-2">
+                    <h5 class="card-title text-uppercase">{{product.name}}</h5>
+                    <span>{{product.price | currency}}</span>
+                </div>
+
+                <label>COR:</label>
+                <div class="col-1 mt-3">
+                    <div class="card-mini d-flex align-items-center justify-content-center">
+                        <img class="img-fluid"
+                            src="/assets/iwohw18.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="col-12 mt-2 d-flex flex-column">
+                    <label class="mb-3">QUANTIDADE:</label>
+                    <div class="quantity-control d-flex">
+                        <button (click)="decrease()">-</button><input class="mx-1" type="text" [value]="quantity"><button (click)="increase()">+</button>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-4">
+                    <button type="button" class="px-3" (click)="addProductToCart()"><i class="bi bi-cart"></i> INCLUIR NO CARRINHO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5 d-flex align-items-center">
+        <div class="col-3">
+            <ul class="nav nav-pills" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation"> <button class="btn active" id="faq_tab_1-tab"
+                        data-bs-toggle="tab" data-bs-target="#faq_tab_1" type="button" role="tab"
+                        aria-controls="faq_tab_1" aria-selected="true">
+                        DESCRIÇÃO
+                    </button> </li>
+                <li class="nav-item ms-3" role="presentation"> <button class="btn" id="faq_tab_2-tab"
+                        data-bs-toggle="tab" data-bs-target="#faq_tab_2" type="button" role="tab"
+                        aria-controls="faq_tab_2" aria-selected="false">
+                        SIMULAR FRETE
+                    </button> </li>
+            </ul>
+        </div>
+        <div class="col-9">
+            <div class="section-title-line"></div>
+        </div>
+
+        <div class="col-12 mt-4 mb-4">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade active show" id="faq_tab_1" role="tabpanel" aria-labelledby="faq_tab_1-tab">
+                    <app-product-desc></app-product-desc>
+                </div>
+                <div class="tab-pane fade" id="faq_tab_2" role="tabpanel" aria-labelledby="faq_tab_2-tab">
+                    <app-product-ship></app-product-ship>
+                </div>
+            </div>
+        </div>

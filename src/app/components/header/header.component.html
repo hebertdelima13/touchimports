@@ -1,0 +1,107 @@
+<div class="container">
+    <div class="row d-flex align-items-center py-4">
+        <div class="col-md-2 col-12 d-flex align-items-center justify-content-between">
+            <a href="/">
+                <img class="logo img-fluid" src="./assets/logo.png" alt="">
+            </a>
+            <div class="dropdown dropdown-cel d-md-none d-block">
+                <button class="btn d-flex align-items-center p-0" type="button" id="dropdownMenuButton2"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-list"></i>
+                </button>
+                <ul class="dropdown-menu pt-0 border-0 text-center" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item mt-2" href="#">INÍCIO</a></li>
+                    <li><a class="dropdown-item" href="" routerLink="/produtos">PRODUTOS</a></li>
+                    <li><a class="dropdown-item" href="#">CONTATO</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">CELULARES</a></li>
+                    <li><a class="dropdown-item" href="#">FONES DE OUVIDO</a></li>
+                    <li><a class="dropdown-item" href="#">RELÓGIOS</a></li>
+                    <li><a class="dropdown-item" href="#">POWER BANK</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">CADASTRA-SE</a></li>
+                    <li><a class="dropdown-item mb-2" href="" routerLink="/login">LOGIN</a></li>
+                    <input type="text" name="" id="" placeholder="Pesquisar produto">
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-4 col-12 d-none d-md-block">
+            <div class="search d-flex justify-lg-content-center justify-md-content-end">
+                <input type="text" name="" id="" placeholder="Pesquisar produto">
+                <button type="button" class="ms-2">BUSCAR</button>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12 d-none d-md-block">
+            <div class="d-flex justify-content-md-end justify-content-center">
+                <div class="d-flex header-info">
+                    <i class="bi bi-whatsapp rounded-circle d-flex align-items-center justify-content-center me-2"></i>
+                    <a href="/">
+                        <h6 class="m-0">Telefone</h6><span>(27)99999-9999</span>
+                    </a>
+                </div>
+                <div class="d-flex header-info border-start ms-4">
+                    <i class="bi bi-cart rounded-circle d-flex align-items-center justify-content-center ms-4 me-2"></i>
+                    <app-cart-info-header></app-cart-info-header>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<nav class="py-2 d-none d-md-flex">
+    <div class="container">
+
+        <div class="row d-flex align-items-center justify-content-between">
+            <div class="col-lg-3 col-md-3 col-12">
+                <div class="dropdown">
+                    <button class="d-flex align-items-center ps-0" type="button" id="dropdownMenuButton2"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-list me-2"></i> CATEGORIAS
+                    </button>
+                    <ul class="dropdown-menu pt-0" aria-labelledby="dropdownMenuButton2">
+                        <li *ngFor="let category of categories"><a class="dropdown-item" href=""
+                                routerLink="/categoria/{{category.id}}">{{category.name}}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <ul class="nav d-flex justify-content-center">
+                    <li class="nav-item"><a href="" routerLink="/"
+                            class="nav-link link-dark pe-lg-5 pe-md-3 ps-0 active" aria-current="page">INÍCIO</a></li>
+                    <li class="nav-item"><a href="" routerLink="/produtos"
+                            class="nav-link link-dark pe-lg-5 pe-md-3">PRODUTOS</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link link-dark">CONTATO</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-12" *ngIf="!islogged">
+                <ul class="nav d-flex align-items-center justify-content-end">
+                    <li class="nav-item"><a href="#" routerLink="/register"
+                            class="nav-link px-0 ps-1 me-2 py-0">CADASTRA-SE</a></li>
+                    <li class="nav-item"><a href="" routerLink="/login"
+                            class="nav-link border-start ps-2 px-0 py-0">LOGIN</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-12" *ngIf="islogged">
+                <div class="d-flex align-items-center justify-content-end">
+                    <button class="d-flex align-items-center ps-0" type="button" id="dropdownMenuButton2"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person me-2"></i> Olá, {{users.name}}
+                    </button>
+                    <ul class="dropdown-menu pt-0" aria-labelledby="dropdownMenuButton2">
+                        <li><a class="dropdown-item" routerLink="/user-order">MEUS PEDIDOS</a></li>
+                        <li><a class="dropdown-item" (click)="logout()">SAIR</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
